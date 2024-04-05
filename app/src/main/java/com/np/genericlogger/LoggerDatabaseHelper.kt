@@ -53,4 +53,28 @@ class LoggerDatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABAS
         return loggerList
     }
 
+    fun updateLogger(note: Logger){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_TITLE,note.title)
+        }
+        val whereClause ="$COLUMN_ID=?"
+        val whereArgs = arrayOf(note.id.toString())
+        db.update(TABLE_NAME,values,whereClause,whereArgs)
+        db.close()
+    }
+
+    fun getLoggerByID(noteId:Int):Logger {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID=$noteId"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
+
+        cursor.close()
+        db.close()
+        return Logger(id, title)
+    }
 }

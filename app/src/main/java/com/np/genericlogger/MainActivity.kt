@@ -22,13 +22,17 @@ class MainActivity : AppCompatActivity() {
         db= LoggerDatabaseHelper(this)
         loggerAdapter = LoggerAdapter(db.getAllLogger(),this)
 
-        binding.loggersRecyclerView.layoutManager= LinearLayoutManager(this)
-        binding.loggersRecyclerView.adapter= loggerAdapter
+//      for horizontal
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.loggersRecyclerView.layoutManager = layoutManager
+        // Set adapter for RecyclerView
+        binding.loggersRecyclerView.adapter = loggerAdapter
 
         binding.addLoggerButton.setOnClickListener {
             val intent = Intent(this,AddLoggerActivity::class.java)
             startActivity(intent)
         }
+
 
     }
     override fun onResume() {
