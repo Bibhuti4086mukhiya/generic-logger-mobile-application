@@ -1,5 +1,6 @@
 package com.np.genericlogger
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -27,6 +28,11 @@ class AddLoggerActivity : AppCompatActivity() {
             db.insertLogger(logger)
             finish()
             Toast.makeText(this,"saved noted", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.buttonAddField.setOnClickListener {
+            val intent = Intent(this,AddSubLoggerActivity::class.java)
+            startActivity(intent)
         }
 
     }

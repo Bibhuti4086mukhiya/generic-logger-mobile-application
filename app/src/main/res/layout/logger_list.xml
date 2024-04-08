@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     android:layout_margin="8dp"
     android:padding="16dp"
     android:background="#FFFFFF"
@@ -19,31 +19,52 @@
 
         <!-- Date -->
 
+<!--        <ImageButton-->
+<!--            android:id="@+id/updateLoggerButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="-1dp"-->
+<!--            android:layout_marginEnd="1dp"-->
+<!--            android:contentDescription="Edit Logger"-->
+<!--            android:src="@drawable/ic_edit"-->
+<!--            />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/deleteButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="-2dp"-->
+<!--            android:layout_marginEnd="48dp"-->
+<!--            android:src="@drawable/ic_delete" />-->
+
         <ImageButton
-            android:id="@+id/updateLoggerButton"
+            android:id="@+id/editDeleteOptionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="-1dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="1dp"
-            android:contentDescription="Edit Logger"
-            android:src="@drawable/ic_edit"
-            />
+            android:background="@color/white"
+            android:src="@drawable/baseline_more_vert_24" />
 
         <TextView
             android:id="@+id/titleTextView"
-            android:layout_width="95dp"
-            android:layout_height="51dp"
+            android:layout_width="136dp"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="8dp"
             android:text="Title"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewDate"

@@ -1,5 +1,6 @@
 package com.np.genericlogger
 
+import LoggerAdapter
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var db: LoggerDatabaseHelper
     private lateinit var loggerAdapter: LoggerAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AddLoggerActivity::class.java)
             startActivity(intent)
         }
-
 
     }
     override fun onResume() {

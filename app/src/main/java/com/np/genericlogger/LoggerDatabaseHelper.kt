@@ -77,4 +77,12 @@ class LoggerDatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABAS
         db.close()
         return Logger(id, title)
     }
+    fun deleteLogger(noteId: Int){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(noteId.toString())
+        db.delete(TABLE_NAME,whereClause,whereArgs)
+        db.close()
+    }
+
 }
